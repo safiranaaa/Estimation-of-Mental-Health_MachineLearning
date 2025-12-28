@@ -1009,7 +1009,7 @@ elif selectDataset == "PostMortum":
 
 
 elif selectDataset == "Panic Disorder":
-    st.image("panic.jpg", use_column_width=True)
+    st.image("panic.jpg", use_container_width=True)
     st.header("Panic Disorder")
     st.subheader("Training dataset")
     training_data = pd.read_csv('panic_disorder_dataset_training.csv')
@@ -1039,6 +1039,9 @@ elif selectDataset == "Panic Disorder":
 
     data_input_training1 = pd.get_dummies(data_input_training, columns=['Gender', 'Current Stressors', 'Symptoms', 'Severity', 'Impact on Life', 'Demographics', 'Medical History', 'Psychiatric History', 'Substance Use', 'Coping Mechanisms', 'Social Support', 'Lifestyle Factors'])
     data_input_testing1 = pd.get_dummies(data_input_testing, columns=['Gender', 'Current Stressors', 'Symptoms', 'Severity', 'Impact on Life', 'Demographics', 'Medical History', 'Psychiatric History', 'Substance Use', 'Coping Mechanisms', 'Social Support', 'Lifestyle Factors'])
+
+    # After getting dummies for testing, ensure it has the same columns as training
+    data_input_testing1 = data_input_testing1.reindex(columns=data_input_training1.columns, fill_value=0)
 
     st.write("Updated Data Input Testing")
     st.write(data_input_testing1)
