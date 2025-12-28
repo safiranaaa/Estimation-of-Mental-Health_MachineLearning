@@ -779,7 +779,7 @@ elif selectDataset == "Schizophrenia":
 
 
 elif selectDataset == "PostMortum":
-    st.image("postmortum.jpg", use_column_width=True)
+    st.image("postmartum.jpg", use_column_width=True)
     st.header("PostMortum")
     st.subheader("Training dataset")
     training_data = pd.read_csv('training_2post.csv')
