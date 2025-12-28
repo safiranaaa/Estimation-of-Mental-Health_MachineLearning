@@ -9,7 +9,7 @@ from sklearn.metrics import accuracy_score
 import os
 
 # Displaying the icon image
-st.image("mentalhealth.jpg", use_column_width=True)
+st.image("mentalHealth.jpg", use_column_width=True)
 st.header("Mental Health Estimation Model Using Several Machine Learning Algorithm")
 st.write("The Machine Learning Algorithm used in this Mental Health Estimation Model are Support Vector Machine, K-Nearest Neighbors, Decision Tree")
 
